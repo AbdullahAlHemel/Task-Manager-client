@@ -1,16 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { AuthContext } from '../Auth/AuthProvider';
 
 
 const SignIn = () => {
 
-    const handleLogin = (data) => {
-        console.log(data);
+  const { signIn } = useContext(AuthContext) 
+  const navigate = useNavigate()
+
+  const handleLogin = event => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+        signIn(email, password);
+        navigate('/')
     }
 
     return (
-        <div className="hero min-h-screen">
+        <from className="hero min-h-screen">
         <div className="hero-content flex-col md:flex">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl text-base-400 font-bold">Login now!</h1>
@@ -40,7 +49,7 @@ const SignIn = () => {
             <SocialLogin></SocialLogin>
           </div>
         </div>
-      </div>
+      </from>
     );
 };
 
