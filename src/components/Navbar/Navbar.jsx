@@ -20,6 +20,7 @@ const navOptions =
                 
          {user? 
          <>
+                <li><Link to='/add'>Add</Link></li>
             <li><button onClick={handleLogOut}>LogOut</button></li>
          </>
          :

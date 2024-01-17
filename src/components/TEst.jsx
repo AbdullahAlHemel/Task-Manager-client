@@ -51,8 +51,21 @@ const SignIn = () => {
             <p className='text-center my-2 text-xl'><small>New Here? <Link to='/signup' className='text-blue-600'>Create an Account</Link></small></p>
             </form>
             <SocialLogin></SocialLogin>
+              <Link to='/go on the base'></Link>
+            <h2>This is on the Top and need Base</h2>
+            <p className='bg-red-600 mt-2'>Ok</p>
+            <div>
+                <h2>
+                    That Was made for it and should Proper Use Of it
+                </h2>
+            </div>
           </div>
-        </div>
+
+          <div>
+             <h2 className=''>Need Help Mp</h2>
+          </div>
+
+        </div>                    
       </from>
     );
 };

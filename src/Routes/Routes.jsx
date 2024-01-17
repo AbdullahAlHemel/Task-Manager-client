@@ -7,6 +7,7 @@ import Signup from "../components/Signup/Signup";
 import SignIn from "../components/SignIn/SignIn";
 import About from "../components/About/About";
 import Contract from "../components/Contract/Contract";
+import AddTask from "../components/AddTask/AddTask";
 
   
 export const router = createBrowserRouter([
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
         {
           path: '/contract',
           element: <Contract></Contract>
+        },
+        {
+          path: '/add',
+          element: <AddTask> </AddTask>
         }
       ],
     },

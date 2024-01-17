@@ -1,12 +1,20 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Auth/AuthProvider';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const Signup = () => {
     const {register,handleSubmit ,reset , formState: { errors }} = useForm();
     const {createUser} = useContext(AuthContext) 
     const navigate = useNavigate()
+
+    
+  useEffect(() => {
+    AOS.init({duration:"1000"})
+},[])
 
     const onSubmit = (data) => {
         console.log(data);
@@ -16,8 +24,8 @@ const Signup = () => {
     }
 
     return (
-        <div>
-                   <div className="hero min-h-screen">
+        <div data-aos="zoom-in-down">
+            <div className="hero min-h-screen pt-12">
     <div className="hero-content flex-col md:flex">
         <div className="text-center lg:text-left">
         <h1 className="text-3xl font-semibold text-base-400">Sign up now!</h1>
